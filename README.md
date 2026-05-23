@@ -1,59 +1,89 @@
-# GeradorCertificado
+# Gerador de Certificados
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.11.
+Aplicação web feita em Angular para criar, visualizar e listar certificados gerados. O projeto foi organizado para separar a interface em componentes reutilizáveis e manter as páginas principais isoladas por responsabilidade.
 
-## Development server
+## O que o projeto faz
 
-To start a local development server, run:
+A aplicação permite:
+
+- Gerar certificados por meio de um formulário dedicado
+- Visualizar o histórico de certificados já criados
+- Visualizar individualmente um certificado
+- Fazer download dos certificados
+
+## Links de acesso
+
+- GitHub Pages: https://juan-ferreirax.github.io/gerador-certificado/
+- Netlify: https://certificado-generator.netlify.app/
+
+## Tecnologias utilizadas
+
+- [HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
+- [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Framework Angular (v21)](https://angular.dev/)
+- [Framework Bootstrap (v5)](https://getbootstrap.com/)
+- [Biblioteca Phospor Icons](https://phosphoricons.com/)
+
+## Como executar localmente
 
 ```bash
+npm install
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Depois, acesse `http://localhost:4200/`.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Outros comandos úteis
 
 ```bash
-ng generate component component-name
+ng test (testa os componentes da aplicação)
+ng build (constroi os arquivos de build para deploy)
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Estrutura modular
 
-```bash
-ng generate --help
+O projeto segue uma organização modular para facilitar manutenção e reuso:
+
+- `src/app/_components`: Componentes reutilizáveis da interface.
+- `src/app/pages`: Páginas principais da aplicação.
+- `src/app/_services`: Serviços responsáveis por regras de negócio e comunicação interna.
+- `src/app/interfaces`: Contratos de tipos usados na aplicação.
+- `public`: Arquivos estáticos, como imagens e ícones.
+
+### Componentes reutilizáveis
+
+- `base-ui`: Estrutura visual base da aplicação.
+- `navbar`: Barra de navegação principal.
+- `primary-button` e `secondary-button`: Botões padronizados.
+- `item-certificado`: Card/listagem de um certificado na tela de histórico.
+
+### Páginas principais
+
+- `certificados`: Lista/histórico de certificados gerados.
+- `certificado-form`: Formulário para gerar um novo certificado.
+- `certificado`: Visualização individual de um certificado.
+
+### Rotas da aplicação
+
+- `/` → Lista de certificados.
+- `/certificados/novo` → Tela de geração.
+- `/certificados/:id` → Visualização de um certificado específico.
+
+## Observação sobre armazenamento local
+
+Atualmente a aplicação **não possui banco de dados**: Os dados são armazenados no Local Storage do navegador. O Local Storage é uma área de armazenamento chave/valor disponível para scripts do lado do cliente, ele persiste entre sessões e normalmente tem limite em torno de alguns megabytes. Os valores são salvos como texto (strings) e não são criptografados.
+
+Como consequência, **não use Local Storage para dados sensíveis** (dados pessoais protegidos, tokens de autenticação, segredos, etc.), pois qualquer script que rode no mesmo domínio pode ler esses dados e eles ficam expostos em texto puro. O Local Storage foi utilizado nessa aplicação apenas para facilitar o desenvolvimento.
+
+Como limpar os dados do Local Storage (duas formas simples):
+
+- Pelo console do navegador (DevTools → Console ou pelo atalho F12), execute:
+
+```javascript
+localStorage.clear()
 ```
 
-## Building
+- Pelo painel de aplicações do navegador (DevTools → Application → Storage → Clear site data) ou pelas configurações de privacidade do navegador.
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Este armazenamento foi adotado apenas para acelerar o desenvolvimento local. Em produção, recomenda-se integrar um backend com armazenamento seguro e protegido principalmente se estiver lidando com dados sensíveis.
