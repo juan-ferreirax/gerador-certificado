@@ -44,6 +44,3 @@ Thumbs.db
 
 # Obsidian workspace files
 .obsidian
-
-# netlify deploy
-netlify.toml
