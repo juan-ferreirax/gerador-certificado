@@ -27,7 +27,10 @@ export class Certificado {
   }
 
   downloadCertificado() {
-    html2canvas(this.certificadoElement.nativeElement, {scale: 3}).then(
+    html2canvas(this.certificadoElement.nativeElement, {
+      scale: 3,
+      backgroundColor: '#1b2d6b'
+    }).then(
       canvas => {
         const link = document.createElement('a');
         link.href = canvas.toDataURL('image/png');
