@@ -1,17 +1,18 @@
-# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+# Git ignore rules for this project.
+# Reference: https://docs.github.com/get-started/getting-started-with-git/ignoring-files
 
-# Compiled output
+# Build artifacts / compiled output
 /dist
 /tmp
 /out-tsc
 /bazel-out
 
-# Node
+# Node dependencies and logs
 /node_modules
 npm-debug.log
 yarn-error.log
 
-# IDEs and editors
+# IDEs and editors (local workspace settings)
 .idea/
 .project
 .classpath
@@ -21,16 +22,14 @@ yarn-error.log
 *.sublime-workspace
 
 # Visual Studio Code
+.vscode/
 .vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-!.vscode/mcp.json
 .history/*
 
-# Miscellaneous
-/.angular/cache
+# Angular cache
+/.angular
+
+# Miscellaneous caches and outputs
 .sass-cache/
 /connect.lock
 /coverage
@@ -42,3 +41,9 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
+
+# Obsidian workspace files
+.obsidian
+
+# netlify deploy
+netlify.toml
