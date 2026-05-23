@@ -5,7 +5,7 @@
 3. Escolher se vai habilitar SSR (Server-Side Render)
 4. Escolher se vai configurar agente de IA no projeto
 ### Descrição da estrutura do projeto
-* **.vscode:** Configirações do VS Code para o projeto
+* **.vscode:** Configurações do VS Code para o projeto
 * **node_modules:** Local onde ficam instaladas as bibliotecas e dependências
 * **public:** Onde costumam ficar os arquivos de mídia como ícones, imagens, vídeos etc
 * **src:** Diretório de recursos onde ficam os principais arquivos do projeto
@@ -19,23 +19,23 @@
 	* **index.html:** Arquivo onde o Angular injeta todo o JavaScript da aplicação
 	* **main.ts:** Especifica o componente principal que vai carregar todas as páginas, por padrão é o App, appConfig
 	* **styles.css:** CSS global da aplicação, configura estilos globais
-* **.editorconfig:** Configura a identação do projeto
+* **.editorconfig:** Configura a indentação do projeto
 * **.gitignore:** Pastas e arquivos a serem ignorados ao subir o projeto
 * **prettierrc:** Define as configurações do formatador de código prettierrc
 * **angular.json:** Toda a configuração do projeto
-  Principais configurações do arquivo ```angular.json```:
+	Principais configurações do arquivo ```angular.json```:
 	* ```projects:``` Especifica a configuração dos projetos, por padrão ```ng new``` cria apenas um projeto de nome especificado na hora da criação.
-	* ```projectType:```  Especifica o tipo da aplicação, ex: application, library.
+	* ```projectType:``` Especifica o tipo da aplicação, ex: application, library.
 	* ```root:``` Define o diretório raiz do projeto, ```""``` significa que está na raiz do workspace.
 	* ```sourceRoot:``` Indica onde o código-fonte do projeto está, por padrão ```src```.
 	* ```prefix:``` Utilizado nas tags quando precisa chamar um componente.
 	* ```architect/build/options/```
-		* ```outputPath:``` Especifica onde ficará os arquivos de publicação após finalizar o projeto, normalmente ```dist/nome-do-projeto```
+		* ```outputPath:``` Especifica onde ficarão os arquivos de publicação após finalizar o projeto, normalmente ```dist/nome-do-projeto```
 		* ```index:``` Arquivo HTML principal do projeto onde o Angular vai injetar o JavaScript. Normalmente em ```src/index.html```.
 		* ```browser:``` Define o arquivo de entrada da aplicação, que é também onde define o componente principal ```App, appConfig``` da aplicação.
 		* ```assets:``` Define a lista de arquivos ou diretórios que serão incluídos na sua build. Normalmente a pasta ```public``` que contém ```assets```.
 		* ```styles:``` Define as estilizações que serão aplicadas em todo o projeto.
-		* ```scripts:``` Igualmente o styles, define os scripts JavaScript que serão aplicados globalmente.
+		* ```scripts:``` Assim como o styles, define os scripts JavaScript que serão aplicados globalmente.
 	* ```configurations/production/budgets/```
 		* ```maximumWarning:``` Define o tamanho dos arquivos de publicação para que o CLI do Angular exiba um aviso. Normalmente ```500kb```.
 		* ```maximumError:``` Exibe um erro e impede a build se o tamanho dos arquivos de publicação ultrapassarem o valor especificado, normalmente ```1MB```.

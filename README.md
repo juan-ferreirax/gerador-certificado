@@ -23,7 +23,7 @@ A aplicação permite:
 - [TypeScript](https://www.typescriptlang.org/)
 - [Framework Angular (v21)](https://angular.dev/)
 - [Framework Bootstrap (v5)](https://getbootstrap.com/)
-- [Biblioteca Phospor Icons](https://phosphoricons.com/)
+- [Biblioteca Phosphor Icons](https://phosphoricons.com/)
 
 ## Como executar localmente
 
@@ -38,7 +38,7 @@ Depois, acesse `http://localhost:4200/`.
 
 ```bash
 ng test (testa os componentes da aplicação)
-ng build (constroi os arquivos de build para deploy)
+ng build (constrói os arquivos de build para deploy)
 ```
 
 ## Estrutura modular
