@@ -3,8 +3,8 @@
     <a routerLink="/" class="navbar-logo">
       <img src="navbar/logo.svg" alt="logo">
     </a>
-    <div class="collapse navbar-collapse justify-content-end">
-      <ul class="navbar-nav">
+    <div class="navbar-menu justify-content-end">
+      <ul class="navbar-nav flex-row align-items-center flex-nowrap">
         <li class="nav-item d-flex align-items-center">
           <i class="ph ph-medal" [ngClass]="{'active': rlaListaCertificado.isActive}"></i>
           <a routerLink="/" #rlaListaCertificado="routerLinkActive" routerLinkActive="active"
